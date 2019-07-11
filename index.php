@@ -72,6 +72,7 @@ date_default_timezone_set("Asia/Jakarta");
      <li><a href="index.php?mnu=angket"><i class="icon icon-file"></i> <span>Angket</span></a> </li>
     <li><a href="index.php?mnu=pengujian"><i class="icon icon-check"></i> <span>Pengujian</span></a> </li>
     <li><a href="index.php?mnu=grafik"><i class="icon icon-signal"></i> <span>Grafik</span></a></li>
+	<li><a href="index.php?mnu=akurasi"><i class="icon icon-signal"></i> <span>Akurasi</span></a></li>
    <?php }else{?>
       <li><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li><a href="index.php?mnu=login"><i class="icon icon-key"></i> <span>Login</span></a> </li>
@@ -112,6 +113,7 @@ else if($mnu=="tfidf"){require_once"NB.php";}
 else if($mnu=="nb2"){require_once"NB2.php";}
 else if($mnu=="tfidf2"){require_once"tfidf.php";}
 else if($mnu=="grafik"){require_once"grafik.php";}
+else if($mnu=="akurasi"){require_once"akurasi.php";}
 else {require_once"home.php";}
                 
                
@@ -275,7 +277,7 @@ return $s;
 function getJum($conn,$sql){
   $rs=$conn->query($sql);
   $jum= $rs->num_rows;
-    $rs->free();
+    /*$rs->free();*/
     return $jum;
 }
 
